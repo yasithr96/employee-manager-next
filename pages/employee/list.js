@@ -22,6 +22,7 @@ export const getStaticProps = async () => {
     props: {
       employeeData: result.data,
     },
+    revalidate: 5,
   };
 };
 
