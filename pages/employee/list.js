@@ -77,6 +77,7 @@ export default function List({ employeeData }) {
         <Grid container>
           {employees?.map((employee) => (
             <GridCard
+              key={employee._id}
               employee={employee}
               updateEmployee={updateEmployee}
               deleteEmp={deleteEmp}
