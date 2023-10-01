@@ -29,30 +29,30 @@ const EmpTable = ({ employees, updateEmployee, deleteEmp }) => {
         <TableBody>
           {employees?.map((employee) => (
             <TableRow
-              key={employee._id}
+              key={employee?._id}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
               <TableCell>
-                <Avatar alt="Remy Sharp" src={employee.photo} />
+                <Avatar alt="Remy Sharp" src={employee?.photo} />
               </TableCell>
               <TableCell component="th" scope="row">
-                {employee.firstName}
+                {employee?.firstName}
               </TableCell>
 
-              <TableCell>{employee.lastName}</TableCell>
-              <TableCell>{employee.email}</TableCell>
-              <TableCell>{employee.phoneNumber}</TableCell>
+              <TableCell>{employee?.lastName}</TableCell>
+              <TableCell>{employee?.email}</TableCell>
+              <TableCell>{employee?.phoneNumber}</TableCell>
               <TableCell>
-                {employee.gender === "M" ? "Male" : "Female"}
+                {employee?.gender === "M" ? "Male" : "Female"}
               </TableCell>
               <TableCell>
-                <Link href={"/employee/edit/" + employee._id}>
+                <Link href={"/employee/edit/" + employee?._id}>
                   <IconButton onClick={() => updateEmployee(employee)}>
                     <EditIcon color="primary" />
                   </IconButton>
                 </Link>
 
-                <IconButton onClick={() => deleteEmp(employee._id)}>
+                <IconButton onClick={() => deleteEmp(employee?._id)}>
                   <DeleteIcon color="error" />
                 </IconButton>
               </TableCell>
